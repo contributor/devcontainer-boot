@@ -8,4 +8,10 @@ if [ ! -e "$HOME_BIN/just" ]; then
     echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 fi
 
-$HOME_BIN/just clone $1 $2
+# clone repo if repo name and branch are passed
+# and if not already cloned
+if [ "$#" -e 2 ]; then
+    if [ ! -e ../.git ]; then
+        $HOME_BIN/just clone $1 $2
+    fi
+fi
