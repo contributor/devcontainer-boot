@@ -10,7 +10,7 @@ fi
 
 # clone repo if repo name and branch are passed
 # and if not already cloned
-if [ "$#" -e 2 ]; then
+if [ "$#" -eq 2 ]; then
     echo "Params for cloning repo are passed"
     if [ ! -e ../.git ]; then
         echo "Cloning..."
